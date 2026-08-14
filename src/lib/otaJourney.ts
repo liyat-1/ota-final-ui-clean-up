@@ -84,12 +84,21 @@ export type SequenceMessage = {
     cta: string;
   };
   text: string;
+  /** Optional label for the link appended to every text message. */
+  textLinkLabel?: string;
   landing: {
     headline: string;
     subtext: string;
     submitLabel: string;
     fields: LandingField[];
+    /** Heading above the data-capture form. */
+    sectionTitle?: string;
+    /** Reservation facts shown in the summary card. */
+    stay?: { id: string; label: string; value: string }[];
+    /** Whether the form is shown at all. */
+    capture?: boolean;
   };
+
   success: {
     headline: string;
     message: string;
