@@ -103,7 +103,11 @@ export type SequenceMessage = {
     headline: string;
     message: string;
     cta: string;
+    /** Reassurance rows shown as ticks on the success screen. */
+    checks?: string[];
+    footnote?: string;
   };
+
   offer: Offer;
 };
 
