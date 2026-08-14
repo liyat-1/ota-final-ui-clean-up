@@ -51,7 +51,20 @@ export type Offer = {
   description: string;
   validity: string;
   cta: string;
+  /** Which catalogue incentive this offer was picked from. */
+  catalogId?: string;
+  category?: string;
+  /** Short line used inside the email teaser panel. */
+  teaser?: string;
+  benefits?: string[];
+  upgrade?: { from: string; to: string };
+  image?: string;
+  /** Guest segment the offer is limited to. */
+  segment?: string;
+  /** Optional cap, e.g. "Max 40 upgrades per week". */
+  limit?: string;
 };
+
 
 export type SequenceMessage = {
   id: string;
