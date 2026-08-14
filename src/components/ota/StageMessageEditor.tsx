@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { Eye, Gift, LayoutTemplate, Monitor, Plus, Smartphone, Star, Trash2 } from "lucide-react";
+import { PhoneMockup } from "@/components/editor/PhoneMockup";
 import { Select } from "@/components/editor/Select";
+
 import { Field, TextArea, TextInput } from "@/components/editor/controls";
 import {
   EmailScreen,
