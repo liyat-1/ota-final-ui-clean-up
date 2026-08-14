@@ -208,7 +208,6 @@ export function StageScreens({
 }
 
 function PhoneScreen({ children }: { children: React.ReactNode }) {
-  const { PhoneMockup } = usePhone();
   return (
     <PhoneMockup scale={0.78} contentClassName="bg-white">
       {children}
@@ -216,12 +215,6 @@ function PhoneScreen({ children }: { children: React.ReactNode }) {
   );
 }
 
-/** Keeps the phone frame import in one place — the frame itself never changes. */
-function usePhone() {
-  return phoneModule;
-}
-import { PhoneMockup } from "@/components/editor/PhoneMockup";
-const phoneModule = { PhoneMockup };
 
 /** Preview column with its own device toggle. */
 export function StagePreviewPane({
