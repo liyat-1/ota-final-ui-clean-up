@@ -101,11 +101,19 @@ export const SAMPLE_VALUES: Record<string, string> = {
   "{{checkout_date}}": "December 29, 2024",
   "{{hotel}}": "Hellas Gadgets Kallithea",
   "{{loyalty_tier}}": "Gold",
+  "{{guest.first_name}}": "Sarah",
+  "{{guest.last_name}}": "Miller",
+  "{{hotel.name}}": "Wyndham Grand Istanbul Levent",
+  "{{arrival_date}}": "June 24",
+  "{{departure_date}}": "June 27",
+  "{{room_type}}": "Deluxe King",
+  "{{booking_link}}": "directful.co/stay",
 };
 
 export function renderTokens(input: string) {
-  return input.replace(/\{\{[a-z_]+\}\}/g, (m) => SAMPLE_VALUES[m] ?? m);
+  return input.replace(/\{\{[a-z_.]+\}\}/g, (m) => SAMPLE_VALUES[m] ?? m);
 }
+
 
 /** Very small markdown-ish inline renderer: **bold** and *italic*. */
 export function inlineHtml(input: string, substitute = true) {

@@ -51,7 +51,20 @@ export type Offer = {
   description: string;
   validity: string;
   cta: string;
+  /** Which catalogue incentive this offer was picked from. */
+  catalogId?: string;
+  category?: string;
+  /** Short line used inside the email teaser panel. */
+  teaser?: string;
+  benefits?: string[];
+  upgrade?: { from: string; to: string };
+  image?: string;
+  /** Guest segment the offer is limited to. */
+  segment?: string;
+  /** Optional cap, e.g. "Max 40 upgrades per week". */
+  limit?: string;
 };
+
 
 export type SequenceMessage = {
   id: string;
@@ -70,18 +83,34 @@ export type SequenceMessage = {
     body: string[];
     cta: string;
   };
+  /** Which email design this message uses. */
+  templateId?: string;
   text: string;
+
+  /** Optional label for the link appended to every text message. */
+  textLinkLabel?: string;
   landing: {
     headline: string;
     subtext: string;
     submitLabel: string;
     fields: LandingField[];
+    /** Heading above the data-capture form. */
+    sectionTitle?: string;
+    /** Reservation facts shown in the summary card. */
+    stay?: { id: string; label: string; value: string }[];
+    /** Whether the form is shown at all. */
+    capture?: boolean;
   };
+
   success: {
     headline: string;
     message: string;
     cta: string;
+    /** Reassurance rows shown as ticks on the success screen. */
+    checks?: string[];
+    footnote?: string;
   };
+
   offer: Offer;
 };
 
