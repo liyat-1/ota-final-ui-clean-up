@@ -83,7 +83,10 @@ export type SequenceMessage = {
     body: string[];
     cta: string;
   };
+  /** Which email design this message uses. */
+  templateId?: string;
   text: string;
+
   /** Optional label for the link appended to every text message. */
   textLinkLabel?: string;
   landing: {
